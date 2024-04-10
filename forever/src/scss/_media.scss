@@ -1,0 +1,7 @@
+$mobile-above: 601px;
+
+@mixin mobile-above {
+  @media (min-width: $mobile-above) {
+    @content;
+  }
+}

@@ -1,0 +1,121 @@
+.section-layer {
+  @extend .container;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8rem;
+  padding-top: 6.4rem;
+  @media (max-width: 600px) {
+    padding: 3.6rem 1.8rem;
+  }
+}
+
+.section--gradient {
+  position: relative;
+  background-color: $color-dark;
+  color: $color-white;
+}
+
+.section--how {
+  background-color: $color-dark;
+  color: $color-white;
+
+  .section-layer {
+    //justify-content: space-between;
+    padding-top: 2.5rem;
+    padding-bottom: 1.8rem;
+    @include mobile-above {
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .section-layer {
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.section--battery {
+  background-color: $color-dark;
+  .section-layer {
+    padding-top: 2.1rem;
+    padding-bottom: 1.6rem;
+
+  }
+}
+
+.section--description {
+  color: $color-white;
+  .section-layer {
+    padding-top: 3rem;
+    @include mobile-above {
+      padding-bottom: 4.6rem;
+    }
+  }
+}
+
+.section--autopayment {
+  color: $color-white;
+  position: relative;
+  .section-layer {
+    padding-top: 0.8rem;
+    @include mobile-above {
+      padding-bottom: 15rem;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 152px;
+    height: 144px;
+    background-image: url("../img/lines-mobile.png");
+    //не знаю как поместить на задний фон
+    z-index: 1;
+
+    @include mobile-above {
+      display: none;
+    }
+  }
+}
+
+.section--download-app {
+  .section-layer {
+    padding-top: 4.6rem;
+    padding-bottom: 4.3rem;
+
+    @include mobile-above {
+      padding-top: 8rem;
+      padding-bottom: 14rem;
+    }
+  }
+}
+
+.section--footer {
+  .section-layer {
+    padding: 2.4rem 1.8rem;
+
+    @include mobile-above {
+      padding: 3rem 1.8rem;
+    }
+  }
+}
+
+@import "./sections/teaser",
+        "./sections/gradient",
+        "./sections/how",
+        "./sections/battery",
+        "./sections/description",
+        "./sections/autopayment",
+        "./sections/download-app",
+        //"sections/page-menu",
+        "./sections/footer";

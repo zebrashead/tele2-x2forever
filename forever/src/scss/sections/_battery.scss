@@ -1,0 +1,291 @@
+.section-battery {
+  position: relative;
+  padding-right: 0;
+  z-index: 0;
+  @include mobile-above {
+    //z-index: 0;
+  }
+
+  .image {
+    position: absolute;
+    transform-origin: top left;
+    transform: rotate(-80deg);
+    width: 250vw;
+    top: 1.5rem;
+    left: 19.5rem;
+    max-width: 82rem;
+
+    @include mobile-above {
+      display: block;
+      transform: none;
+      top: -0.5rem;
+      left: 40.5rem;
+      z-index: 0;
+      width: 100vw;
+      height: 20rem;
+      max-width: none;
+    }
+
+    &__desktop {
+      display: block;
+    }
+
+    .img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .battery {
+    padding-top: 0;
+
+    @include mobile-above {
+      padding-top: 5.7rem;
+      position: relative;
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        padding-left: 1.3rem;
+    }
+
+    &__body {
+      max-width: 100%;
+      width: auto;
+      background-color: $color-dark;
+
+      @include mobile-above {
+        width: 42.1rem;
+        z-index: 1;
+        position: relative;
+      }
+    }
+
+    &__lines {
+      @include mobile-above {
+        position: absolute;
+        top: 2.8rem;
+        left: 42rem;
+      }
+    }
+
+    &__logo {
+      max-width: 28.2rem;
+      border: 0.15rem solid lightblue;
+      border-radius: 1.4rem;
+      position: relative;
+      background-color: $color-dark;
+      z-index: 1;
+
+      &::after {
+        position: absolute;
+        width: 15rem;
+        height: 0.4rem;
+        bottom: -0.2rem;
+        right: 2.5rem;
+        content: "";
+        display: block;
+        background: radial-gradient(#FAFAFA, #3FCBFF);
+        border-radius: 90%;
+        filter: blur(0.15rem);
+      }
+
+      &::before {
+        position: absolute;
+        width: 15rem;
+        height: 0.4rem;
+        top: -0.2rem;
+        left: 2.5rem;
+        content: "";
+        display: block;
+        background: radial-gradient(#FAFAFA, #3FCBFF);
+        border-radius: 90%;
+        filter: blur(0.15rem);
+      }
+
+      @include mobile-above {
+        max-width: 38.9rem;
+        border: 0.3rem solid #3bbded;
+        box-shadow: 0 0 0.5rem #3bbded;
+        background-color: $color-dark;
+        z-index: 1;
+      }
+      &-tail {
+        height: 6.8rem;
+        width: 2.4rem;
+        border-top: 0.15rem solid #3bbded;
+        border-right: 0.15rem solid #3bbded;
+        border-bottom: 0.15rem solid #3bbded;
+        border-radius: 0 1.4rem 1.4rem 0;
+        box-shadow: 0 0 0.5rem #3bbded;
+
+        @include mobile-above {
+          height: 9.1rem;
+          width: 3.2rem;
+          border-top: 0.3rem solid #3bbded;
+          border-right: 0.3rem solid #3bbded;
+          border-bottom: 0.3rem solid #3bbded;
+          background-color: $color-dark; //нужно убедться что это нужно переносить выше в родителя
+          z-index: 1;
+        }
+      }
+      &::before {
+        @include mobile-above {
+          top: -0.5rem;
+          left: 5rem;
+          width: 25rem;
+          height: 0.7rem;
+
+        }
+      }
+
+      &::after {
+        @include mobile-above {
+          bottom: -0.5rem;
+          right: 5rem;
+          width: 25rem;
+          height: 0.7rem;
+        }
+      }
+
+      &-container {
+        display: flex;
+        column-gap: 1.6rem;
+        margin: 1.4rem 3.4rem;
+
+        @include mobile-above {
+          column-gap: 2rem;
+          margin: 2.4rem 5.1rem;
+        }
+      }
+
+      &-small {
+        width: 6.1rem;
+        height: 9.9rem;
+        border-radius: 1rem;
+        border: 0.15rem solid #3bbded;
+
+        @include mobile-above {
+
+          width: 8.4rem;
+          height: 13.5rem;
+          border-radius: 1.4rem;
+        }
+      }
+    }
+
+    &-gb {
+      display: none;
+      @include mobile-above {
+        display: block;
+        position: absolute;
+        //z-index: -1;
+        pointer-events: none;
+        user-select: none;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+
+        &--1 {
+          width: 4rem;
+          bottom: 20rem;
+          right: -100%;
+          transform: rotate(45deg);
+        }
+
+        &--2 {
+          width: 4rem;
+          bottom: 20rem;
+          right: -50%;
+          transform: rotate(-90deg);
+        }
+
+        &--3 {
+          width: 4rem;
+          bottom: 19rem;
+          right: -150%;
+          transform: rotate(-20deg);
+        }
+
+        &--4 {
+          width: 6rem;
+          bottom: 10rem;
+          right: -88%;
+          transform: rotate(35deg);
+        }
+
+        &--5 {
+          width: 8rem;
+          bottom: 19rem;
+          right: -222%;
+          transform: rotate(40deg);
+        }
+
+        &--6 {
+          width: 5rem;
+          bottom: 9rem;
+          right: -55%;
+          transform: rotate(55deg);
+        }
+
+        &--7 {
+          width: 7rem;
+          bottom: 12rem;
+          right: -130%;
+          transform: rotate(69deg);
+        }
+      }
+
+    }
+  }
+
+  .battery--fulfilled {
+    background-image: linear-gradient(#8DE0FF, #3FCBFF);
+  }
+
+  .battery__list {
+    display: flex;
+    justify-content: space-around;
+    background-color: $color-dark;
+    z-index: 1;
+    padding-top: 1.8rem;
+    @include mobile-above {
+
+    }
+
+    &-item {
+      font-size: 2rem;
+      line-height: 1.26;
+      font-family: $font1b, 'serif';
+      font-weight: 700;
+      text-align: center;
+      width: 7.1rem;
+
+      @include mobile-above {
+        font-size: 2.4rem;
+        width: 8.6rem;
+      }
+
+      .active {
+        color: #3FCBFF;
+      }
+    }
+
+    &-link {
+      max-width: 7.1rem;
+      color: $color-gray;
+
+      @include mobile-above {
+        display: inline-block;
+        max-width: 8.6rem;
+      }
+
+      &:hover {
+        //color: lightblue;
+      }
+    }
+  }
+}
